@@ -109,23 +109,76 @@
 
 
 
-let a = {
-  "max speed": 12000
+// let a = {
+//   "max speed": 12000
+// }
+// console.log(spaceship["max speed"]); // 12000
+
+
+
+
+
+// const user = { name: 'Алиса', age: 25, country: 'Россия' };
+// // Вместо трех строк кода пишем одну:
+// const { name, age, country } = user;
+// console.log(name); // 'Алиса'
+
+
+
+
+
+// const { name: userName, age: userAge } = user;
+// console.log(userName); // 'Алиса' (переменной name больше нет, есть userName)
+
+
+
+// const user = {
+//   name: 'Ehson',
+//   sayHi() {
+//     console.log(`Привет, я ${this.name}`); 
+//   }
+// };
+
+// user.sayHi()
+
+
+// function main(name) {
+//   this.name = name; // 'this' создается автоматически при вызове через new
+// }
+
+// const mainpart = new main('Soft');
+// console.log(mainpart.name);
+
+
+// const obj = {
+//   value: 10,
+//   arrowFunc: () => {
+//     console.log(this.value); // undefined!
+//   }
+// };
+// obj.arrowFunc();
+
+
+
+// function introduce(language, town) {
+//   console.log(`Меня зовут ${this.name}, я пишу на ${language} в городе ${town}`);
+// }
+
+// const developer = { name: 'Иван' };
+// introduce.call(developer, 'JavaScript', 'Москва');
+
+
+
+
+
+// introduce.apply(developer, ['JavaScript', 'Санкт-Петербург']);
+
+
+
+
+const user = { name: 'Ольга' };
+function greet(greeting) {
+  console.log(`${greeting}, ${this.name}!`);
 }
-console.log(spaceship["max speed"]); // 12000
-
-
-
-
-
-const user = { name: 'Алиса', age: 25, country: 'Россия' };
-// Вместо трех строк кода пишем одну:
-const { name, age, country } = user;
-console.log(name); // 'Алиса'
-
-
-
-
-
-const { name: userName, age: userAge } = user;
-console.log(userName); // 'Алиса' (переменной name больше нет, есть userName)
+const greetOlga = greet.bind(user);
+greetOlga('Добрый день');
